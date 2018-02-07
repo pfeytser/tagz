@@ -11,11 +11,8 @@
     </head>
 
     <body>
-        <input type='text' id='inputText'>
-        <button onclick="inputLogic()">Run</button>
-        <br>
-        <div id='displayText'></div>
-        <br>
+        <input type='text' id='tags'>
+        <button onclick="countTags()">Run</button>
         <table id='myTable' class="sortable">
             <thead>
                 <tr>
@@ -23,8 +20,7 @@
                     <th>Count</th>
                 </tr>
             </thead>
-            <tbody id="myTBODY">
-            </tbody>
+            <tbody id="tableBody"></tbody>
         </table>
     </body>
 </html>

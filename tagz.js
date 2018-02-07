@@ -1,5 +1,5 @@
-function inputLogic() {
-    var inputText = document.getElementById('inputText').value;
+function countTags() {
+    var inputText = document.getElementById('tags').value;
 
     var array = inputText.split(',');
 
@@ -13,7 +13,7 @@ function inputLogic() {
         if (array[i] != current) {
             if (cnt > 0) {
 
-                var table = document.getElementById("myTBODY");
+                var table = document.getElementById("tableBody");
 
                 var row = table.insertRow(-1);
 
