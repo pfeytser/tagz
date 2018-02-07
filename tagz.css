@@ -1,0 +1,20 @@
+body {
+  background-color: #f6f6f6;
+}
+
+table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th {
+  width: 200px;
+}
+
+table, th, td {
+  border-top: 1px solid #dddddd;
+}
+
+td, th {
+  padding: 10px;
+}
