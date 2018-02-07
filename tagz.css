@@ -23,7 +23,7 @@ table {
 }
 
 th {
-  width: 200px;
+  width: 250px;
 }
 
 table, th, td {
@@ -32,4 +32,8 @@ table, th, td {
 
 td, th {
   padding: 10px;
+}
+
+div {
+  margin-top: 20px;
 }
