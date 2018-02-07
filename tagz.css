@@ -1,5 +1,20 @@
 body {
   background-color: #f6f6f6;
+  font-family: helvetica, arial;
+}
+
+input {
+  height: 30px;
+  width: 350px;
+  font-size: 12px;
+}
+
+button {
+    height: 35px;
+    font-size: 14px;
+    width: 80px;
+    background-color: #3b444c;
+    color: white;
 }
 
 table {
