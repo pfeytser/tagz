@@ -1,9 +1,14 @@
 function countTags() {
     var inputText = document.getElementById('tags').value;
 
-    var array = inputText.split(',');
+    // var cleanedText = inputText.replace(/['"]+/g, '');
+    // console.log(cleanedText);
 
-    console.log(array);
+    var array = inputText.replace(/['"]|\s/g, '').split(',');
+
+    var tagsCount = array.length;
+
+    document.getElementById("total-tags").innerHTML = tagsCount;
 
     array.sort();
 
@@ -13,15 +18,15 @@ function countTags() {
         if (array[i] != current) {
             if (cnt > 0) {
 
-                var table = document.getElementById("tableBody");
+              var table = document.getElementById("tableBody");
 
-                var row = table.insertRow(-1);
+              var row = table.insertRow(-1);
 
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
+              var cell1 = row.insertCell(0);
+              var cell2 = row.insertCell(1);
 
-                cell1.innerHTML = current;
-                cell2.innerHTML = parseInt(cnt);
+              cell1.innerHTML = current;
+              cell2.innerHTML = cnt;
 
             }
             current = array[i];
