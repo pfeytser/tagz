@@ -4,7 +4,15 @@ function countTags() {
     // var cleanedText = inputText.replace(/['"]+/g, '');
     // console.log(cleanedText);
 
-    var array = inputText.replace(/['"]|\s/g, '').split(',');
+    var array = inputText.replace(/"/g, ',').split(',');
+
+    var trimmedArray =  function (array) {
+      for (i = 0; i < array.length; i++) {
+        trimmedArray[i] = array[i].trim();
+      }
+    }
+
+    console.log(array);
 
     var tagsCount = array.length;
 
@@ -12,27 +20,30 @@ function countTags() {
 
     array.sort();
 
-    var current = null;
-    var cnt = 0;
-    for (var i = 0; i <= array.length; i++) {
-        if (array[i] != current) {
-            if (cnt > 0) {
+    var deduped = array.reduce( function (result, item) {
+      var lastItem = result[result.length - 1] || {};
 
-              var table = document.getElementById("tableBody");
+      if (lastItem.text && lastItem.text === item) {
+        lastItem.count++;
+      } else {
+        result.push({
+          text: item,
+          count: 1
+        });
+      }
+      return result;
+    }, [])
 
-              var row = table.insertRow(-1);
+    for (var i = 0; i <= deduped.length; i++) {
 
-              var cell1 = row.insertCell(0);
-              var cell2 = row.insertCell(1);
+      var table = document.getElementById("tableBody");
 
-              cell1.innerHTML = current;
-              cell2.innerHTML = cnt;
+      var row = table.insertRow(-1);
 
-            }
-            current = array[i];
-            cnt = 1;
-        } else {
-            cnt++;
-        }
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+
+      cell1.innerHTML = deduped[i].text;
+      cell2.innerHTML = deduped[i].count;
     }
 }
