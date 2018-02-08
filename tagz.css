@@ -22,10 +22,6 @@ table {
   border-collapse: collapse;
 }
 
-th {
-  width: 250px;
-}
-
 table, th, td {
   border-top: 1px solid #dddddd;
 }
@@ -38,6 +34,10 @@ div {
   margin-top: 20px;
 }
 
-#row-count {
+#numbers {
   width: auto;
+}
+
+#tags-col {
+  width: 250px;
 }
