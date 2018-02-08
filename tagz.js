@@ -34,6 +34,16 @@ function countTags() {
       return result;
     }, [])
 
+    deduped.sort(function(row1, row2) {
+      if (row1.count < row2.count) {
+        return 1;
+      }
+      if (row1.count > row2.count) {
+        return -1;
+      }
+      return 0;
+    });
+
     for (var i = 0; i <= deduped.length; i++) {
 
       var itemCount = deduped[i].count;
