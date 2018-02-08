@@ -14,13 +14,13 @@
     <body>
         <input type='text' id='tags' placeholder="Paste comma separated tags here">
         <button onclick="countTags()">Run</button>
-        <div> Only display items with counts of more than 10</div>
         <div>Total tags counted: <span id="total-tags"></span></div>
         <table id='myTable' class="sortable">
             <thead>
                 <tr>
-                    <th>Tag</th>
-                    <th>Count</th>
+                  <th id="row-count">#</th>
+                  <th>Tag</th>
+                  <th>Count</th>
                 </tr>
             </thead>
             <tbody id='tableBody'></tbody>

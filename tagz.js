@@ -44,20 +44,24 @@ function countTags() {
       return 0;
     });
 
+    var rowCount = 1;
     for (var i = 0; i <= deduped.length; i++) {
 
       var itemCount = deduped[i].count;
 
-      if (itemCount > 10) {
-        var table = document.getElementById("tableBody");
+      var table = document.getElementById("tableBody");
 
-        var row = table.insertRow(-1);
+      var row = table.insertRow(-1);
 
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
+      var cell1 = row.insertCell(0)
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
 
-        cell1.innerHTML = deduped[i].text;
-        cell2.innerHTML = itemCount;
-      }
-    }
+      cell1.innerHTML = rowCount;
+      cell2.innerHTML = deduped[i].text;
+      cell3.innerHTML = itemCount;
+
+      rowCount++;
+  }
+
 }
