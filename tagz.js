@@ -38,7 +38,7 @@ function countTags() {
 
       var itemCount = deduped[i].count;
 
-      if (itemCount > 9) {
+      if (itemCount > 10) {
         var table = document.getElementById("tableBody");
 
         var row = table.insertRow(-1);
