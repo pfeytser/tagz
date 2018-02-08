@@ -48,20 +48,23 @@ function countTags() {
     for (var i = 0; i <= deduped.length; i++) {
 
       var itemCount = deduped[i].count;
+      var itemText = deduped[i].text;
 
-      var table = document.getElementById("tableBody");
+      if (itemText.trim().length !== 0) {
+        var table = document.getElementById("tableBody");
 
-      var row = table.insertRow(-1);
+        var row = table.insertRow(-1);
 
-      var cell1 = row.insertCell(0)
-      var cell2 = row.insertCell(1);
-      var cell3 = row.insertCell(2);
+        var cell1 = row.insertCell(0)
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
 
-      cell1.innerHTML = rowCount;
-      cell2.innerHTML = deduped[i].text;
-      cell3.innerHTML = itemCount;
+        cell1.innerHTML = rowCount;
+        cell2.innerHTML = itemText;
+        cell3.innerHTML = itemCount;
 
-      rowCount++;
+        rowCount++;
+      }
   }
 
 }
