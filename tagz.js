@@ -36,14 +36,18 @@ function countTags() {
 
     for (var i = 0; i <= deduped.length; i++) {
 
-      var table = document.getElementById("tableBody");
+      var itemCount = deduped[i].count;
 
-      var row = table.insertRow(-1);
+      if (itemCount > 9) {
+        var table = document.getElementById("tableBody");
 
-      var cell1 = row.insertCell(0);
-      var cell2 = row.insertCell(1);
+        var row = table.insertRow(-1);
 
-      cell1.innerHTML = deduped[i].text;
-      cell2.innerHTML = deduped[i].count;
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+
+        cell1.innerHTML = deduped[i].text;
+        cell2.innerHTML = itemCount;
+      }
     }
 }
